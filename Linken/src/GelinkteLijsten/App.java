@@ -21,7 +21,32 @@ public class App {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		Wachtrij wachtrij = new Wachtrij();
+		Stapel stapel1 = new Stapel();
+		Stapel stapel2 = new Stapel();
+		Stapel stapel3 = new Stapel();
+		GelinkteLijst list = new GelinkteLijst();
 		
+		list.insertFirst(stapel1);
+		list.insertFirst(stapel3);
+		list.insertFirst(stapel2);
+		list.insertBefore(wachtrij, stapel2);
+		System.out.println(list.getFirst() +""+ list.getLast());
+		list.insertAfter(stapel3, stapel1);
+		list.insertLast(wachtrij);
+		System.out.println(list.getSize());
+		
+		list.remove(stapel2);
+	    
+	    wachtrij.enqueue(stapel1);
+	    System.out.println(wachtrij.front());
+	    wachtrij.size();
+	    wachtrij.enqueue(stapel2);
+	    System.out.println(wachtrij.front());
+	    wachtrij.dequeue();
+	    System.out.println(wachtrij.front());
+	    wachtrij.dequeue();
+	    System.out.println(wachtrij.front());
 	}
 
 }
